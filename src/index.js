@@ -2,15 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const route = require("./routes/route");
 const  mongoose = require('mongoose');
+// const validUrl=require("valid-url")
+
 const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
-mongoose.connect("mongodb+srv://group46:B811zDhsnx1EyU93@cluster0.h3aynxd.mongodb.net/group46database?retryWrites=true&w=majority", {
-    useNewUrlParser: true
-})
+mongoose.connect("mongodb+srv://navneet:Navneet719@cluster0.3oclrwu.mongodb.net/navneet?retryWrites=true&w=majority", { useNewUrlParser: true })
 .then( () => console.log("MongoDb is connected"))
 .catch ( err => console.log(err) )
 
