@@ -62,4 +62,24 @@ const urlShort = async (req, res) => {
 };
 
 
-module.exports = { urlShort }
+
+
+
+//--------------------------------get url----------------------
+const longUrl= async  (req,res) =>{
+    const data= req.params.urlCode
+   let savedData = await  urlModel.findOne({ data: data })
+   let allData = {
+       longUrl: savedData.longUrl,
+       shortUrl: savedData.shortUrl,
+       urlCode: savedData.urlCode,
+   };
+   
+   res.status(301).send({ status: true, data: allData });
+   };
+   
+   
+
+
+
+module.exports = { urlShort,longUrl}
