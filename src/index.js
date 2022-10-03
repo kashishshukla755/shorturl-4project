@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const route = require("./routes/route");
 const  mongoose = require('mongoose');
 // const validUrl=require("valid-url")
+const cach=require("./controllers/urlcontroller")
 
 const app = express();
 
